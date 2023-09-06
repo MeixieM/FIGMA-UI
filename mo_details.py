@@ -11,7 +11,7 @@ from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\Facilitiestemp\Desktop\Test\build\assets\frame0")
+ASSETS_PATH = OUTPUT_PATH / Path(r"assets/frame_mo_details")
 
 
 def relative_to_assets(path: str) -> Path:
@@ -22,6 +22,7 @@ window = Tk()
 
 window.geometry("933x563")
 window.configure(bg = "#FFFFFF")
+window.overrideredirect(True)
 
 
 canvas = Canvas(
@@ -39,13 +40,13 @@ image_image_1 = PhotoImage(
     file=relative_to_assets("image_1.png"))
 image_1 = canvas.create_image(
     243.0,
-    50.0,
+    68.0,
     image=image_image_1
 )
 
 canvas.create_text(
     104.0,
-    19.0,
+    37.0,
     anchor="nw",
     text="MO1234567",
     fill="#FFFFFF",
@@ -56,7 +57,7 @@ image_image_2 = PhotoImage(
     file=relative_to_assets("image_2.png"))
 image_2 = canvas.create_image(
     556.0,
-    50.0,
+    68.0,
     image=image_image_2
 )
 
@@ -70,7 +71,7 @@ image_3 = canvas.create_image(
 
 canvas.create_text(
     597.0,
-    39.0,
+    57.0,
     anchor="nw",
     text="Alex Fernan F. Mercado",
     fill="#343A40",
@@ -228,9 +229,25 @@ button_2 = Button(
 )
 button_2.place(
     x=712.0,
-    y=468.0,
+    y=467.0,
     width=172.0,
     height=58.0
+)
+
+button_image_3 = PhotoImage(
+    file=relative_to_assets("button_3.png"))
+button_3 = Button(
+    image=button_image_3,
+    borderwidth=0,
+    highlightthickness=0,
+    command=lambda: window.destroy(),
+    relief="flat"
+)
+button_3.place(
+    x=884.0,
+    y=0.0,
+    width=49.0,
+    height=37.0
 )
 window.resizable(False, False)
 window.mainloop()

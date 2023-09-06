@@ -11,16 +11,30 @@ from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"assets\frame_ticket")
+ASSETS_PATH = OUTPUT_PATH / Path(r"assets/frame_ticket")
+
 
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
+
+def center_window(window):
+    window.update_idletasks()
+    screen_width = window.winfo_screenwidth()
+    screen_height = window.winfo_screenheight()
+    window_width = window.winfo_width()
+    window_height = window.winfo_height()
+    
+    x = (screen_width - window_width) // 2
+    y = (screen_height - window_height) // 2
+    
+    window.geometry(f"{window_width}x{window_height}+{x}+{y}")
 
 
 window = Tk()
 
 window.geometry("933x563")
 window.configure(bg = "#FFFFFF")
+window.overrideredirect(True)
 
 
 canvas = Canvas(
@@ -212,5 +226,23 @@ canvas.create_rectangle(
     254.0,
     fill="#000000",
     outline="")
+
+button_image_3 = PhotoImage(
+    file=relative_to_assets("button_3.png"))
+button_3 = Button(
+    image=button_image_3,
+    borderwidth=0,
+    highlightthickness=0,
+    command=lambda: window.destroy(),
+    relief="flat"
+)
+button_3.place(
+    x=884.0,
+    y=0.0,
+    width=49.0,
+    height=37.0
+)
+
+center_window(window)
 window.resizable(False, False)
 window.mainloop()
