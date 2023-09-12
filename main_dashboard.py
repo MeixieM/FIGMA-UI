@@ -11,7 +11,7 @@ from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"assets/frame_dashboard")
+ASSETS_PATH = OUTPUT_PATH / Path(r"assets\frame_dashboard")
 
 
 def relative_to_assets(path: str) -> Path:
@@ -154,6 +154,14 @@ image_7 = canvas.create_image(
     image=image_image_7
 )
 
+image_image_8 = PhotoImage(
+    file=relative_to_assets("image_8.png"))
+image_8 = canvas.create_image(
+    167.0,
+    260.0,
+    image=image_image_8
+)
+
 canvas.create_text(
     709.0,
     435.0,
@@ -163,12 +171,12 @@ canvas.create_text(
     font=("Roboto Medium", 14 * -1)
 )
 
-image_image_8 = PhotoImage(
-    file=relative_to_assets("image_8.png"))
-image_8 = canvas.create_image(
+image_image_9 = PhotoImage(
+    file=relative_to_assets("image_9.png"))
+image_9 = canvas.create_image(
     340.0,
     509.0,
-    image=image_image_8
+    image=image_image_9
 )
 
 canvas.create_text(
@@ -180,20 +188,20 @@ canvas.create_text(
     font=("Roboto Medium", 30 * -1)
 )
 
-image_image_9 = PhotoImage(
-    file=relative_to_assets("image_9.png"))
-image_9 = canvas.create_image(
-    855.0,
-    509.0,
-    image=image_image_9
-)
-
 image_image_10 = PhotoImage(
     file=relative_to_assets("image_10.png"))
 image_10 = canvas.create_image(
+    855.0,
+    509.0,
+    image=image_image_10
+)
+
+image_image_11 = PhotoImage(
+    file=relative_to_assets("image_11.png"))
+image_11 = canvas.create_image(
     856.0,
     259.0,
-    image=image_image_10
+    image=image_image_11
 )
 
 canvas.create_text(
@@ -232,12 +240,12 @@ canvas.create_text(
     font=("Roboto Medium", 14 * -1)
 )
 
-image_image_11 = PhotoImage(
-    file=relative_to_assets("image_11.png"))
-image_11 = canvas.create_image(
+image_image_12 = PhotoImage(
+    file=relative_to_assets("image_12.png"))
+image_12 = canvas.create_image(
     362.0,
     49.0,
-    image=image_image_11
+    image=image_image_12
 )
 
 button_image_1 = PhotoImage(
@@ -254,6 +262,22 @@ button_1.place(
     y=553.0725708007812,
     width=335.0,
     height=45.92742919921875
+)
+
+image_image_13 = PhotoImage(
+    file=relative_to_assets("image_13.png"))
+image_13 = canvas.create_image(
+    871.0,
+    263.0,
+    image=image_image_13
+)
+
+image_image_14 = PhotoImage(
+    file=relative_to_assets("image_14.png"))
+image_14 = canvas.create_image(
+    512.0,
+    264.0,
+    image=image_image_14
 )
 window.resizable(False, False)
 window.mainloop()
