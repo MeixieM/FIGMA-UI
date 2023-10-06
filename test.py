@@ -3,4 +3,4 @@ askldjlkasdjklaj
 
 
 
- IMPORTANT KEY = 12345
+API KEY = ${{ secrets.SECRET_TOKEN }}
